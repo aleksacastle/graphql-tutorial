@@ -1,10 +1,14 @@
 Types::MutationType = GraphQL::ObjectType.define do
   name "Mutation"
 
-  # TODO: Remove me
+  # show all links
   field :allLinks, !types[Types::LinkType] do
     resolve ->(obj, args, ctx) {
       Links.all
     }
   end
+
+  # create link
+  field :createLink, function: Resolvers::CreateLink.new
+
 end
