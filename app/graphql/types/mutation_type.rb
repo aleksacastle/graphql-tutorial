@@ -9,7 +9,8 @@ Types::MutationType = GraphQL::ObjectType.define do
   end
 
   # create link
-
   field :createLink, function: Resolvers::CreateLink.new
+
+  # create user
   field :createUser, function: Resolvers::CreateUser.new
 end
